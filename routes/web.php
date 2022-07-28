@@ -32,26 +32,30 @@ Route::get('/registration', function () {
     return view('auth.registration');
 });
 
+Route::get('/activity-log', function () {
+    return view('admin.activity-log');
+});
+
 // Category
 Route::get('/category', [CategoryController::class, 'index'])->name('category');
-Route::get('/add-category',[CategoryController::class, 'create'])->name('add-category');
-Route::post('/insert-category',[CategoryController::class, 'store'])->name('insert-category');
-Route::get('/form-edit-category/{id}',[CategoryController::class, 'edit'])->name('form-edit-category');
-Route::put('/update-category/{id}',[CategoryController::class, 'update'])->name('update-category');
-Route::get('/delete-category/{id}',[CategoryController::class, 'destroy'])->name('delete-category');
+Route::get('/category/add',[CategoryController::class, 'create'])->name('add-category');
+Route::post('/category/insert',[CategoryController::class, 'store'])->name('insert-category');
+Route::get('/category/form-edit/{id}',[CategoryController::class, 'edit'])->name('form-edit-category');
+Route::put('/category/update/{id}',[CategoryController::class, 'update'])->name('update-category');
+Route::get('/category/delete/{id}',[CategoryController::class, 'destroy'])->name('delete-category');
 
 // Menu
 Route::get('/menu', [MenuController::class, 'index'])->name('menu');
-Route::get('/add-menu',[MenuController::class, 'create'])->name('add-menu');
-Route::post('/insert-menu',[MenuController::class, 'store'])->name('insert-menu');
-Route::get('/form-edit-menu/{id}',[MenuController::class, 'edit'])->name('form-edit-menu');
-Route::put('/update-menu/{id}',[MenuController::class, 'update'])->name('update-menu');
-Route::get('/delete-menu/{id}',[MenuController::class, 'destroy'])->name('delete-menu');
+Route::get('/menu/add',[MenuController::class, 'create'])->name('add-menu');
+Route::post('/menu/insert',[MenuController::class, 'store'])->name('insert-menu');
+Route::get('/menu/form-edit/{id}',[MenuController::class, 'edit'])->name('form-edit-menu');
+Route::put('/menu/update/{id}',[MenuController::class, 'update'])->name('update-menu');
+Route::get('/menu/delete/{id}',[MenuController::class, 'destroy'])->name('delete-menu');
 
 // Transaction
 Route::get('/transaction', [TransactionController::class, 'index'])->name('transaction');
-Route::get('/add-transaction',[TransactionController::class, 'create'])->name('add-transaction');
-Route::post('/insert-transaction',[TransactionController::class, 'store'])->name('insert-transaction');
-Route::get('/form-edit-transaction/{id}',[TransactionController::class, 'edit'])->name('form-edit-transaction');
-Route::put('/update-transaction/{id}',[TransactionController::class, 'update'])->name('update-transaction');
-Route::get('/delete-transaction/{id}',[TransactionController::class, 'destroy'])->name('delete-transaction');
+Route::get('/transaction/add',[TransactionController::class, 'create'])->name('add-transaction');
+Route::post('/transaction/insert',[TransactionController::class, 'store'])->name('insert-transaction');
+Route::get('/transaction/form-edit/{id}',[TransactionController::class, 'edit'])->name('form-edit-transaction');
+Route::put('/transaction/update/{id}',[TransactionController::class, 'update'])->name('update-transaction');
+Route::get('/transaction/delete/{id}',[TransactionController::class, 'destroy'])->name('delete-transaction');
