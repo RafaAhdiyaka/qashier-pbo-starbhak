@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\TransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,3 +48,10 @@ Route::get('/form-edit-menu/{id}',[MenuController::class, 'edit'])->name('form-e
 Route::put('/update-menu/{id}',[MenuController::class, 'update'])->name('update-menu');
 Route::get('/delete-menu/{id}',[MenuController::class, 'destroy'])->name('delete-menu');
 
+// Transaction
+Route::get('/transaction', [TransactionController::class, 'index'])->name('transaction');
+Route::get('/add-transaction',[TransactionController::class, 'create'])->name('add-transaction');
+Route::post('/insert-transaction',[TransactionController::class, 'store'])->name('insert-transaction');
+Route::get('/form-edit-transaction/{id}',[TransactionController::class, 'edit'])->name('form-edit-transaction');
+Route::put('/update-transaction/{id}',[TransactionController::class, 'update'])->name('update-transaction');
+Route::get('/delete-transaction/{id}',[TransactionController::class, 'destroy'])->name('delete-transaction');
