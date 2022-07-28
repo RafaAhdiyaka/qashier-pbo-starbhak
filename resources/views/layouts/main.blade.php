@@ -8,8 +8,6 @@
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="/assets/adminlte/plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
@@ -31,14 +29,26 @@
                 <div class="sidebar-menu">
                     <ul class="menu">
                         <li class='sidebar-title'>Main Menu</li>
-                       
                         <li class="sidebar-item">
-                            <a href="" class='sidebar-link'>
+                            <a href="/dashboard" class='sidebar-link'>
                                 <i data-feather="home" width="20"></i>
                                 <span>Dashboard</span>
                             </a>
                         </li>
-                       
+
+                        <li class="sidebar-item">
+                            <a href="{{route('category')}}" class='sidebar-link'>
+                                <i data-feather="grid" width="20"></i>
+                                <span>Tabel Category</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a href="{{route('menu')}}" class='sidebar-link'>
+                                <i data-feather="grid" width="20"></i>
+                                <span>Tabel Menu</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
