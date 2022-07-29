@@ -10,6 +10,6 @@ class Transaction extends Model
     use HasFactory;
     protected $guarded =[];
     public function transaction(){
-        return $this->belongsTo(Transaction::class);
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 }

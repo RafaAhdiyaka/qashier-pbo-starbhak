@@ -16,9 +16,11 @@ return new class extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
             $table->integer('no_meja');
-            $table->foreignKey('menu_id');
+            $table->foreignId('menu_id');
             $table->integer('qty');
             $table->bigInteger('subtotal');
+            $table->enum('pembayaran', ['tunai', 'credit card', 'dana', 'ovo', 'gopay']);
+            $table->foreignId('user_id');
             $table->timestamps();
         });
     }
