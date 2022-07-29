@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('nama');
             $table->string('deskripsi');
             $table->bigInteger('harga');
-            $table->foreignKey('kategori_id');
+            $table->foreignId('kategori_id');
             $table->timestamps();
         });
     }

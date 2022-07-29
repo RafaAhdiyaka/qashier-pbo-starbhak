@@ -1,11 +1,11 @@
 @extends('layouts.main')
-@section('title', 'Tabel Kategori')
+@section('title', 'Tabel Transaksi')
 
 @section('content')
-<h1 class="text-center mb-4">Data Kategori</h1>
+<h1 class="text-center mb-4">Transaksi</h1>
 
 <div class="container pt-5">
-    <a href="{{route('add-category')}}" type="button" class="btn btn-success mb-3">Tambah +</a>
+    <a href="{{route('add-transaction')}}" type="button" class="btn btn-success mb-3">Tambah +</a>
     <section class="section">
         <div class="card">
             <div class="card-body">
@@ -13,8 +13,11 @@
                     <table class='table table-hover' id="table1">
                         <thead class="thead-dark">
                             <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">Nama</th>
+                                <th scope="col">No Meja</th>
+                                <th scope="col">Menu</th>
+                                <th scope="col">Qty</th>
+                                <th scope="col">Subtotal</th>
+                                <th scope="col">Pembayaran</th>
                                 <th scope="col">Edit</th>
                                 <th scope="col">Delete</th>
                             </tr>
@@ -23,12 +26,16 @@
                             @php
                             $no = 1;
                             @endphp
-                            @foreach ($categories as $index => $row)
+                            @foreach ($transactions as $index => $row)
                             <tr>
-                                <th scope="row">{{ $index + $categories->firstItem() }}</th>
-                                <td>{{ $row->kategori }}</td>
+                                <th scope="row">{{ $index + $transactions->firstItem() }}</th>
+                                <td>{{ $row->no_meja }}</td>
+                                <td>{{ $row->menu_id }}</td>
+                                <td>{{ $row->qty }}</td>
+                                <td>{{ $row->subtotal }}</td>
+                                <td>{{ $row->pembayaran }}</td>
                                 <td>
-                                    <a href="/form-edit-category/{{ $row->id }}" class="text-warning">
+                                    <a href="/form-edit-transaction/{{ $row->id }}" class="text-warning">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             width="18" height="18" fill="currentColor" class="bi bi-pencil-square"
                                             viewBox="0 0 16 16">
@@ -37,9 +44,9 @@
                                             <path fill-rule="evenodd"
                                                 d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
                                         </svg>
-                                    </a>|
+                                    </a>
 
-                                    <a href="/delete-category/{{ $row->id }}" class="text-danger">
+                                    <a href="/delete-transaction/{{ $row->id }}" class="text-danger">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                                             fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                                             <path
@@ -53,7 +60,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    {{ $categories->links() }}
+                    {{ $transactions->links() }}
                 </div>
             </div>
         </div>

@@ -39,14 +39,35 @@
                         <li class="sidebar-item">
                             <a href="{{route('category')}}" class='sidebar-link'>
                                 <i data-feather="grid" width="20"></i>
-                                <span>Tabel Category</span>
+                                <span>Category</span>
                             </a>
                         </li>
 
                         <li class="sidebar-item">
                             <a href="{{route('menu')}}" class='sidebar-link'>
                                 <i data-feather="grid" width="20"></i>
-                                <span>Tabel Menu</span>
+                                <span>Menu</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a href="{{route('transaction')}}" class='sidebar-link'>
+                                <i data-feather="grid" width="20"></i>
+                                <span>Transaction</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a href="{{route('user')}}" class='sidebar-link'>
+                                <i data-feather="grid" width="20"></i>
+                                <span>User</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a href="/activity-log" class='sidebar-link'>
+                                <i data-feather="grid" width="20"></i>
+                                <span>Activity Log</span>
                             </a>
                         </li>
                     </ul>
@@ -77,9 +98,9 @@
                             <a href="#" data-bs-toggle="dropdown"
                                 class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                                 <div class="avatar me-1">
-                                    <img src="/assets/voler/images/avatar/avatar-s-1.png" alt="" srcset="">
+                                    
                                 </div>
-                                <div class="d-none d-md-block d-lg-inline-block">Hi, </div>
+                                <div class="d-none d-md-block d-lg-inline-block">Hi, Users! </div>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
                                 {{-- <div class="dropdown-divider"></div> --}}

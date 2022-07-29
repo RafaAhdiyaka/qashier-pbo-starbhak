@@ -8,7 +8,7 @@
                 <div class="card-group">
                     <div class="card">
                         <div class="card-content">
-                            <img class="card-img-top img-fluid" src="assets/images/samples/pages/content-img-3.jpg" alt="Card image cap">
+                            <img class="card-img-top img-fluid" src="assets/images/samples/pages/content-img-3.jpg" alt="">
                             <div class="card-body">
                                 <h4 class="card-title">Card title</h4>
                                 <p class="card-text">
@@ -20,7 +20,7 @@
                     </div>
                     <div class="card">
                         <div class="card-content">
-                            <img class="card-img-top img-fluid" src="assets/images/samples/pages/content-img-2.jpg" alt="Card image cap">
+                            <img class="card-img-top img-fluid" src="assets/images/samples/pages/content-img-2.jpg" alt="">
                             <div class="card-body">
                                 <h4 class="card-title">Card title</h4>
                                 <p class="card-text">
@@ -33,7 +33,7 @@
                     </div>
                     <div class="card">
                         <div class="card-content">
-                            <img class="card-img-top img-fluid" src="assets/images/samples/pages/content-img-4.jpg" alt="Card image cap">
+                            <img class="card-img-top img-fluid" src="assets/images/samples/pages/content-img-4.jpg" alt="">
                             <div class="card-body">
                                 <h4 class="card-title">Card title</h4>
                                 <p class="card-text">
@@ -46,7 +46,7 @@
                     </div>
                     <div class="card">
                         <div class="card-content">
-                            <img class="card-img-top img-fluid" src="assets/images/samples/pages/content-img-1.jpg" alt="Card image cap">
+                            <img class="card-img-top img-fluid" src="assets/images/samples/pages/kopii.jpeg" alt="">
                             <div class="card-body">
                                 <h4 class="card-title">Card title</h4>
                                 <p class="card-text">

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,3 +60,11 @@ Route::post('/transaction/insert',[TransactionController::class, 'store'])->name
 Route::get('/transaction/form-edit/{id}',[TransactionController::class, 'edit'])->name('form-edit-transaction');
 Route::put('/transaction/update/{id}',[TransactionController::class, 'update'])->name('update-transaction');
 Route::get('/transaction/delete/{id}',[TransactionController::class, 'destroy'])->name('delete-transaction');
+
+// User
+Route::get('/user', [UserController::class, 'index'])->name('user');
+Route::get('/user/add',[UserController::class, 'create'])->name('add-user');
+Route::post('/user/insert',[UserController::class, 'store'])->name('insert-user');
+Route::get('/user/form-edit/{id}',[UserController::class, 'edit'])->name('form-edit-user');
+Route::put('/user/update/{id}',[UserController::class, 'update'])->name('update-user');
+Route::get('/user/delete/{id}',[UserController::class, 'destroy'])->name('delete-user');

@@ -1,11 +1,11 @@
 @extends('layout.voler')
 
-@section('title', 'Tambah Kategori')
+@section('title', 'Tambah Transaksi')
 
 @section('content')
 
 <div class="container">
-    <h1 class="text-center mb-4">Tambah Kategori</h1>
+    <h1 class="text-center mb-4">Transaksi</h1>
     <div class="row justify-content-center">
         <div class="col-8">
             <div class="card">
