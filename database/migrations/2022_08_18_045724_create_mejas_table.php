@@ -13,15 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('transactions', function (Blueprint $table) {
+        Schema::create('mejas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
-            $table->foreignId('order_id');
-            $table->enum('status', ['Belum Dibayar', 'Sudah Dibayar']);
+            $table->integer('no_meja');
+            $table->string('status');
             $table->timestamps();
         });
     }
-    
 
     /**
      * Reverse the migrations.
@@ -30,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transactions');
+        Schema::dropIfExists('mejas');
     }
 };
