@@ -105,7 +105,6 @@ class MenuController extends Controller
 
             //update menu without image
             $menu->update([
-                'image'     => $image->hashName(),
                 'nama_menu'     => $request->nama_menu,
                 'deskripsi'   => $request->deskripsi,
                 'harga'   => $request->harga,
@@ -128,7 +127,7 @@ class MenuController extends Controller
         //delete image
         Storage::delete('public/menus/'.$menu->image);
 
-        //delete post
+        //delete menu
         $menu->delete();
 
         //return response

@@ -22,4 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::apiResource('/menus', App\Http\Controllers\Api\MenuController::class);
 
 //categories
-Route::apiResource('categories', App\Http\Controllers\Api\CategoryController::class);
+Route::apiResource('/categories', App\Http\Controllers\Api\CategoryController::class);
+
+//profile restaurants
+Route::apiResource('/profile-restaurants', App\Http\Controllers\Api\ProfileRestaurantController::class);

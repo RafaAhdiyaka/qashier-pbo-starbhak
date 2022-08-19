@@ -6,22 +6,21 @@ use App\Models\Category;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Resources\CategoryResource;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class CategoryController extends Controller
 {
-     /**
+    /**
      * index
      *
      * @return void
      */
     public function index()
     {
-        //get posts
+        //get categories
         $categories = Category::latest()->paginate(5);
 
-        //return collection of posts as a resource
+        //return collection of categories as a resource
         return new CategoryResource(true, 'List Data Kategori', $categories);
     }
     
@@ -43,7 +42,7 @@ class CategoryController extends Controller
             return response()->json($validator->errors(), 422);
         }
 
-        //create post
+        //create category
         $category = Category::create([
             'kategori'     => $request->kategori,
         ]);
@@ -60,7 +59,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //return single post as a resource
+        //return single category as a resource
         return new CategoryResource(true, 'Data Kategori Ditemukan!', $category);
     }
     
@@ -83,7 +82,6 @@ class CategoryController extends Controller
             return response()->json($validator->errors(), 422);
         }
         
-        //update post without image
         $category->update([
             'kategori'   => $request->kategori,
         ]);
@@ -100,7 +98,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //delete post
+        //delete category
         $category->delete();
 
         //return response
