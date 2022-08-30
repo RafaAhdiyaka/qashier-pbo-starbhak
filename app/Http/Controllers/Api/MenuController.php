@@ -14,7 +14,7 @@ class MenuController extends Controller
     public function index()
     {
         //get menus
-        $menus = Menu::latest()->paginate(5);
+        $menus = Menu::latest()->get();
 
         //return collection of menus as a resource
         return new MenuResource(true, 'List Data Menu', $menus);
@@ -24,7 +24,6 @@ class MenuController extends Controller
     {
         //define validation rules
         $validator = Validator::make($request->all(), [
-            'image'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'nama_menu'     => 'required',
             'deskripsi'   => 'required',
             'harga'   => 'required',
@@ -36,13 +35,8 @@ class MenuController extends Controller
             return response()->json($validator->errors(), 422);
         }
 
-        //upload image
-        $image = $request->file('image');
-        $image->storeAs('public/menus', $image->hashName());
-
         //create menu
         $menu = Menu::create([
-            'image'     => $image->hashName(),
             'nama_menu'     => $request->nama_menu,
             'deskripsi'   => $request->deskripsi,
             'harga'   => $request->harga,
@@ -70,7 +64,6 @@ class MenuController extends Controller
     {
         //define validation rules
         $validator = Validator::make($request->all(), [
-            'image'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'nama_menu'   => 'required',
             'deskripsi'   => 'required',
             'harga'   => 'required',
@@ -82,35 +75,12 @@ class MenuController extends Controller
             return response()->json($validator->errors(), 422);
         }
 
-        //check if image is not empty
-        if ($request->hasFile('image')) {
-
-            //upload image
-            $image = $request->file('image');
-            $image->storeAs('public/menus', $image->hashName());
-
-            //delete old image
-            Storage::delete('public/menus/'.$menu->image);
-
-            //update menu with new image
-            $menu->update([
-                'image'     => $image->hashName(),
-                'nama_menu'     => $request->nama_menu,
-                'deskripsi'   => $request->deskripsi,
-                'harga'   => $request->harga,
-                'kategori_id'   => $request->kategori_id,
-            ]);
-
-        } else {
-
-            //update menu without image
-            $menu->update([
-                'nama_menu'     => $request->nama_menu,
-                'deskripsi'   => $request->deskripsi,
-                'harga'   => $request->harga,
-                'kategori_id'   => $request->kategori_id,
-            ]);
-        }
+        $menu->update([
+            'nama_menu'     => $request->nama_menu,
+            'deskripsi'   => $request->deskripsi,
+            'harga'   => $request->harga,
+            'kategori_id'   => $request->kategori_id,
+        ]);
 
         //return response
         return new MenuResource(true, 'Data Menu Berhasil Diubah!', $menu);
@@ -124,9 +94,6 @@ class MenuController extends Controller
      */
     public function destroy(Menu $menu)
     {
-        //delete image
-        Storage::delete('public/menus/'.$menu->image);
-
         //delete menu
         $menu->delete();
 

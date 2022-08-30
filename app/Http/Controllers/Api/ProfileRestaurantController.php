@@ -18,7 +18,7 @@ class ProfileRestaurantController extends Controller
     public function index()
     {
         //get profile
-        $profile_restaurants = ProfileRestaurant::latest()->paginate(5);
+        $profile_restaurants = ProfileRestaurant::latest()->get();
 
         //return collection of profile as a resource
         return new ProfileRestaurantResource(true, 'List Data Profiles', $profile_restaurants);

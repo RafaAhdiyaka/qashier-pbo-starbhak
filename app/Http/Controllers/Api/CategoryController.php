@@ -18,7 +18,7 @@ class CategoryController extends Controller
     public function index()
     {
         //get categories
-        $categories = Category::latest()->paginate(5);
+        $categories = Category::latest()->get();
 
         //return collection of categories as a resource
         return new CategoryResource(true, 'List Data Kategori', $categories);
